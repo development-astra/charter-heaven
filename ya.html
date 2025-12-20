@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CHARTER HEAVEN</title>
+  
+  <!-- Favicons -->
+  <link href="assets/img/favicon.svg" rel="icon">
+  <link href="assets/img/favicon.svg" rel="apple-touch-icon">
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+  <main>
+    <section class="section section--yachts" aria-labelledby="yachts-title">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title" id="yachts-title">
+            Yachts We Trust With Your Experience
+          </h2>
+        </header>
+      </div>
+
+      <div class="carousel" aria-label="Yachts carousel">
+        <div class="yachts">
+          <div class="yachts__track is-dragging" id="yachtsTrack" role="list">
+
+            <!-- Slide 1 -->
+            <article class="yacht" role="listitem" aria-label="52 Azimut">
+              <!-- ✅ TOP: IMAGES -->
+              <div class="yacht__media">
+                <img
+                  class="yacht__image yacht__image--main"
+                  src="assets/img/new-image/azimut-main.webp"
+                  alt="52' Azimut yacht cruising"
+                  loading="lazy"
+                />
+
+                <div class="yacht__thumbs" aria-label="Azimut thumbnails">
+                  <img class="yacht__image yacht__image--thumb" src="assets/img/new-image/azimut-1.webp" alt="Azimut rear view" loading="lazy" />
+                  <img class="yacht__image yacht__image--thumb" src="assets/img/new-image/azimut-2.webp" alt="Azimut side view" loading="lazy" />
+                </div>
+              </div>
+
+              <!-- ✅ BOTTOM: TEXT + BUTTON -->
+              <div class="yacht__footer">
+                <div class="yacht__text">
+                  <h3 class="yacht__title">52' Azimut (2020)</h3>
+                  <p class="yacht__subtitle">Elegant. Comfortable. Perfect for intimate luxury cruising.</p>
+                  <p class="yacht__desc">Ideal for small groups, birthdays, and relaxed coastal charters.</p>
+                </div>
+
+                <a class="btn btn--primary" href="#">
+                  <img class="btn__icon-img" src="assets/img/new-image/btn-icon.svg" alt="" aria-hidden="true" />
+                  <span class="btn__text">View Availability</span>
+                </a>
+
+              </div>
+            </article>
+
+            <!-- Slide 2 -->
+            <article class="yacht" role="listitem" aria-label="85 Wally">
+              <div class="yacht__media">
+                <img
+                  class="yacht__image yacht__image--main"
+                  src="assets/img/new-image/wally-main.webp"
+                  alt="85' Wally yacht viewed from above"
+                  loading="lazy"
+                />
+
+                <div class="yacht__thumbs" aria-label="Wally thumbnails">
+                  <img class="yacht__image yacht__image--thumb" src="assets/img/new-image/wally-1.webp" alt="Wally underway" loading="lazy" />
+                  <img class="yacht__image yacht__image--thumb" src="assets/img/new-image/wally-2.webp" alt="Wally deck view" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="yacht__footer">
+                <div class="yacht__text">
+                  <h3 class="yacht__title">85' Wally (2024)</h3>
+                  <p class="yacht__subtitle">Bold design with serious performance.</p>
+                  <p class="yacht__desc">For clients who want modern luxury, open decks, and statement-level presence.</p>
+                </div>
+
+                <a class="btn btn--primary" href="#">
+                  <img class="btn__icon-img" src="assets/img/new-image/btn-icon.svg" alt="" aria-hidden="true" />
+                  <span class="btn__text">View Availability</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Slide 3 -->
+            <article class="yacht" role="listitem" aria-label="125 Customline">
+              <div class="yacht__media">
+                <img
+                  class="yacht__image yacht__image--main"
+                  src="assets/img/new-image/custom-main.webp"
+                  alt="125' Customline yacht on open sea"
+                  loading="lazy"
+                />
+
+                <div class="yacht__thumbs" aria-label="Customline thumbnails">
+                  <img class="yacht__image yacht__image--thumb" src="assets/img/new-image/custom-1.webp" alt="Customline rear view" loading="lazy" />
+                  <img class="yacht__image yacht__image--thumb" src="assets/img/new-image/custom-2.webp" alt="Customline front view" loading="lazy" />
+                </div>
+              </div>
+
+              <div class="yacht__footer">
+                <div class="yacht__text">
+                  <h3 class="yacht__title">125' Customline</h3>
+                  <p class="yacht__subtitle">Full-scale luxury for unforgettable occasions.</p>
+                  <p class="yacht__desc">Best for large groups, celebrations, and premium charter experiences.</p>
+                </div>
+
+                <a class="btn btn--primary" href="#">
+                  <img class="btn__icon-img" src="assets/img/new-image/btn-icon.svg" alt="" aria-hidden="true" />
+                  <span class="btn__text">View Availability</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- Indicators -->
+        <div class="carousel__indicators" id="carouselIndicators" aria-label="Carousel indicators">
+          <button class="indicator is-active" type="button" aria-label="Go to slide 1"></button>
+          <button class="indicator" type="button" aria-label="Go to slide 2"></button>
+          <button class="indicator" type="button" aria-label="Go to slide 3"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/vendor/new-carousel/carousel.js"></script>
+</body>
+</html>
