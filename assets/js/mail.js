@@ -15,7 +15,7 @@ $(document).ready(function() {
         var formData = $(this).serialize() + '&g-recaptcha-response=' + recaptchaResponse;
         
         $.ajax({
-            url: 'https://api.astraresults.com/send_email/v1/ez_miami_plumbing',
+            url: 'https://api.astraresults.com/send_email/v1/charter_heaven',
             // url: 'http://localhost:4848/send_email/v1/ez_miami_plumbing',
             type: 'POST',
             data: formData,
@@ -63,7 +63,7 @@ $(document).ready(function() {
         var formData = $(this).serialize() + '&g-recaptcha-response=' + recaptchaResponse;
         
         $.ajax({
-            url: 'https://api.astraresults.com/send_email/v1/ez_miami_plumbing',
+            url: 'https://api.astraresults.com/send_email/v1/charter_heaven',
             // url: 'http://localhost:4848/send_email/v1/ez_miami_plumbing',
             type: 'POST',
             data: formData,
