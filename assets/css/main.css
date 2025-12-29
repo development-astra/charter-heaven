@@ -3191,8 +3191,8 @@ form button.btn:hover svg path {
 .trusted-logo__img[alt="BlackRock"],
 .trusted-logo__img[alt="Kick"],
 .trusted-logo__img[alt="Rainbet"] {
-  max-height: 70px;
-  max-width: 240px;
+  max-height: 95px;
+  max-width: 320px;
 }
 
 /* ===============================
@@ -3210,15 +3210,15 @@ form button.btn:hover svg path {
   }
 
   .trusted-logo {
-    height: 110px;              /* uniform logo slot */
+    height: 140px;              /* uniform logo slot */
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .trusted-logo__img {
-    max-height: 90px;           /* visual consistency */
-    max-width: 180px;
+    max-height: 115px;           /* visual consistency */
+    max-width: 260px;
     width: auto;
     object-fit: contain;
   }
@@ -3233,6 +3233,7 @@ form button.btn:hover svg path {
   .trusted-title {
     letter-spacing: 7px;
     font-size: 18px;
+    margin-top: 10px;
   }
 
   .trusted-strip-full {
@@ -3258,5 +3259,61 @@ form button.btn:hover svg path {
   .trusted-logo__img[alt="Rainbet"] {
     max-height: 52px;           /* wide logos smaller on mobile */
     max-width: 120px;
+  }
+}
+
+/* =========================
+   ACCEPTED PAYMENTS (CRYPTO) — CLEAN + READABLE
+========================= */
+
+.accepted-payments-inline{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: fit-content;
+  margin: 0 auto 30px; /* ✅ add more space before TRUSTED BY */
+  text-align: center;
+}
+
+/* label */
+.ap-label{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #03123d;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+/* hide old dot if still exists somewhere */
+.ap-dot{
+  display: none !important;
+}
+
+/* crypto badge image */
+.ap-logo{
+  height: 74px;          /* ✅ readable size */
+  width: auto;
+  display: block;
+
+  border-radius: 14px;
+  border: 1px solid rgba(3, 18, 61, 0.12);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+}
+
+/* mobile */
+@media (max-width: 767px){
+  .ap-logo{
+    height: 54px;
+    border-radius: 12px;
+  }
+
+  .accepted-payments-inline{
+    margin: 0 auto 22px;
   }
 }
