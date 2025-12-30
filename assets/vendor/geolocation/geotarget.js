@@ -1,60 +1,59 @@
 (async function () {
+    const DEFAULT_LOCATION_NAME = "United States";
 
-    // 🔹 Default fallback location
-    const DEFAULT_LOCATION = { Name: "United States" };
-
-    // 1️⃣ Fetch CSV file
-    async function fetchLocationsCSV(url) {
-        try {
-            const res = await fetch(url);
-            const text = await res.text();
-            const lines = text.trim().split("\n");
-            const headers = lines[0].split(",").map(h => h.trim());
-            const locations = [];
-
-            for (let i = 1; i < lines.length; i++) {
-                const cols = lines[i].split(",").map(c => c.trim());
-                const obj = {};
-                headers.forEach((h, idx) => obj[h] = cols[idx]);
-                locations.push(obj);
-            }
-            return locations;
-        } catch (err) {
-            console.error("Error fetching locations CSV:", err);
-            return [];
-        }
+    function setLocationName(name) {
+        const finalName = (name || DEFAULT_LOCATION_NAME).toUpperCase();
+        document.querySelectorAll("#location").forEach(span => {
+        span.textContent = finalName;
+        });
     }
 
-    // 2️⃣ Load CSV
-    const csvUrl = "/locations.csv";
-    const locations = await fetchLocationsCSV(csvUrl);
-
-    // 3️⃣ Get ?location parameter (if any)
+    // 1. If ?location= is present, use the CSV (Google Ads style)
     const params = new URLSearchParams(window.location.search);
-    let locationId = params.get("location");
-
-    // 4️⃣ Determine location name
-    let locationName = DEFAULT_LOCATION.Name;
+    const locationId = params.get("location");
 
     if (locationId) {
-        // Clean ID from quotes/parentheses
-        locationId = locationId.replace(/[()"']/g, "").trim();
+        try {
+        const res = await fetch("locations.csv");
+        const text = await res.text();
+        const lines = text.trim().split("\n");
+        const headers = lines[0].split(",").map(h => h.trim());
 
-        // Find match in CSV
-        const match = locations.find(loc => {
-            const cleanId = loc["Criteria ID"].replace(/^"|"$/g, "").trim();
-            return cleanId === locationId;
-        });
+        let matchName = null;
 
-        if (match) {
-            locationName = match.Name.replace(/^"|"$/g, "").trim();
+        for (let i = 1; i < lines.length; i++) {
+            const cols = lines[i].split(",").map(c => c.trim());
+            const row = {};
+            headers.forEach((h, idx) => (row[h] = cols[idx]));
+
+            if (row["Criteria ID"] && row["Criteria ID"].replace(/"/g, "") === locationId) {
+            matchName = row["Name"].replace(/"/g, "").trim();
+            break;
+            }
+        }
+
+        setLocationName(matchName);
+        return;
+        } catch (e) {
+        console.error("CSV geo lookup failed:", e);
+        // fall through to IP geo
         }
     }
 
-    // 5️⃣ Update all <span id="location"> elements
-    const locationSpans = document.querySelectorAll("#location");
-    locationSpans.forEach(span => {
-        span.textContent = locationName.toUpperCase();
-    });
+    // 2. No ?location= (or CSV failed): use IP-based geolocation
+    try {
+        const res = await fetch("https://ipapi.co/json/"); // or another IP geo API
+        const data = await res.json();
 
+        const name =
+        data.city ||
+        data.region ||
+        data.country_name ||
+        DEFAULT_LOCATION_NAME;
+
+        setLocationName(name);
+    } catch (e) {
+        console.error("IP geolocation failed:", e);
+        setLocationName(DEFAULT_LOCATION_NAME);
+    }
 })();

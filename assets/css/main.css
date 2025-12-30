@@ -3179,8 +3179,8 @@ form button.btn:hover svg path {
 
 /* Consistent logo sizing (no more crazy big BlackRock) */
 .trusted-logo__img{
-  max-height: 92px;
-  max-width: 220px;
+  max-height: 72px;
+  max-width: 190px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -3191,8 +3191,8 @@ form button.btn:hover svg path {
 .trusted-logo__img[alt="BlackRock"],
 .trusted-logo__img[alt="Kick"],
 .trusted-logo__img[alt="Rainbet"] {
-  max-height: 95px;
-  max-width: 320px;
+  max-height: 160px;
+  max-width: 190px;
 }
 
 /* ===============================
@@ -3201,16 +3201,16 @@ form button.btn:hover svg path {
 @media (min-width: 992px) {
   .trusted-strip-inner {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 logos */
+    grid-template-columns: repeat(6, auto); /* 6 logos */
     align-items: center;
     justify-items: center;
-    gap: 48px;
+    gap: 28px;
     max-width: 1400px;
     margin: 0 auto;
   }
 
   .trusted-logo {
-    height: 140px;              /* uniform logo slot */
+    height: 130px;              /* uniform logo slot */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3218,7 +3218,7 @@ form button.btn:hover svg path {
 
   .trusted-logo__img {
     max-height: 115px;           /* visual consistency */
-    max-width: 260px;
+    max-width: 220px;
     width: auto;
     object-fit: contain;
   }
