@@ -449,7 +449,7 @@ h6 {
 
 /* Logo Styles */
 .logo img {
-  height: 90px;
+  height: 120px;
   width: auto;
   transition: height 0.3s ease;
 }
@@ -479,7 +479,7 @@ h6 {
 
   /* Logo Styles */
   .logo img {
-    height: 80px;
+    height: 110px;
     width: auto;
     transition: height 0.3s ease;
     /* NO MARGIN NEEDED */
@@ -589,7 +589,7 @@ h6 {
 
   /* Adjust logo size for mobile - MODIFIED */
   .logo img {
-    height: 40px;
+    height: 80px;
   }
 
   /* Promotion badge mobile sizing - MODIFIED */
@@ -606,7 +606,7 @@ h6 {
 
   /* Phone number mobile sizing - MODIFIED */
   .phone-number {
-    font-size: 28px;
+    font-size: 23px;
     font-weight: 800;
     margin: 2px 0 0 0;
     font-family: 'Montserrat';
