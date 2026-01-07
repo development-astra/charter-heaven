@@ -1271,7 +1271,7 @@ section,
   z-index: 2;
 }
 
-.hero .container {
+.hero .container { 
   position: relative;
   z-index: 2;
   color: #fff;
