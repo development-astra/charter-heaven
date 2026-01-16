@@ -1,0 +1,221 @@
+.legal-footer {
+    position: relative;
+    padding: 70px 0 40px;
+    overflow: hidden;
+    color: rgba(255, 255, 255, 0.96);
+    background-image: url("../images/footer-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.legal-footer__overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.legal-footer__inner {
+    position: relative;
+    width: min(1320px, 92%);
+    margin: 0 auto;
+}
+
+/* =========================
+   Disclaimers content
+========================= */
+
+.legal-footer__content {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    max-width: 1200px;
+    font-size: 14px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+}
+
+.legal-footer__content p {
+    margin: 0 0 22px;
+}
+
+.legal-footer__small {
+    opacity: 0.95;
+}
+
+/* =========================
+   Bottom row (match 2nd image)
+========================= */
+
+.legal-footer__bottom {
+    margin-top: 34px;
+    padding-top: 18px;
+
+    /* top divider line */
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+
+    display: flex;
+    align-items: flex-start;
+    /* key: don’t vertically center */
+    justify-content: space-between;
+    gap: 26px;
+}
+
+/* LEFT group: badge + stacked lines */
+.legal-footer__bottom-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    min-width: 320px;
+}
+
+/* Badge size/position */
+.legal-footer__badge {
+    width: 150px;
+    height: auto;
+    opacity: 0.98;
+    flex: 0 0 auto;
+    margin-top: 2px;
+    /* slight drop like reference */
+}
+
+/* Left text block (2 lines) */
+.legal-footer__lefttext {
+    display: grid;
+    gap: 10px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+
+    opacity: 0.96;
+    text-transform: uppercase;
+    padding-top: 2px;
+    /* aligns with badge */
+}
+
+.legal-footer__line {
+    margin: 0;
+}
+
+/* Links line */
+.legal-footer__line--links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* RIGHT group: sits more “lower” like 2nd image */
+.legal-footer__bottom-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    font-size: 12px;
+    opacity: 0.95;
+    text-align: right;
+
+    /* key: push it down a bit to match reference */
+    margin-top: 34px;
+
+    /* keep one line on wide screens */
+    white-space: nowrap;
+}
+
+/* Links */
+.legal-footer__a {
+    color: rgba(255, 255, 255, 0.96);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    padding-bottom: 1px;
+}
+
+.legal-footer__a:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.9);
+}
+
+.legal-footer__sep {
+    opacity: 0.75;
+}
+
+/* =========================
+   Tablet: allow right side to wrap nicely
+========================= */
+@media (max-width: 1100px) {
+    .legal-footer__bottom-right {
+        margin-top: 18px;
+        /* reduce drop */
+        white-space: normal;
+        /* allow wrap */
+        text-align: left;
+        justify-content: flex-start;
+    }
+}
+
+/* =========================
+   Mobile: stacked CENTERED (match reference)
+========================= */
+@media (max-width: 992px) {
+    .legal-footer {
+        padding: 56px 0 34px;
+    }
+
+    .legal-footer__content {
+        font-size: 16px;
+    }
+
+    /* bottom becomes centered stacked */
+    .legal-footer__bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .legal-footer__bottom-left {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+        min-width: 0;
+    }
+
+    .legal-footer__badge {
+        width: 145px;
+        margin-top: 0;
+    }
+
+    .legal-footer__lefttext {
+        text-align: center;
+        padding-top: 0;
+        font-size: 13px;
+        line-height: 1.55;
+        letter-spacing: 0.02em;
+    }
+
+    /* make the links centered in one clean line */
+    .legal-footer__line--links {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* right block centered + stacked */
+    .legal-footer__bottom-right {
+        margin-top: 0;
+        justify-content: center;
+        text-align: center;
+        white-space: normal;
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+    /* keep separators nice */
+    .legal-footer__sep {
+        margin: 0 6px;
+    }
+}

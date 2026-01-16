@@ -1,0 +1,195 @@
+:root {
+    --header-bg: #fff;
+    --header-border: rgba(12, 18, 28, .10);
+    --header-shadow: 0 10px 28px rgba(10, 22, 40, .12);
+
+    --container: 1320px;
+
+    --cta-bg: #262E45;
+    --cta-bg-hover: #1f2638;
+    --cta-text: #fff;
+
+    --muted: rgba(11, 18, 32, .70);
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: var(--header-shadow);
+}
+
+/* container */
+.header-inner {
+    width: min(var(--container), calc(100% - 40px));
+    margin: 0 auto;
+    padding: 12px 0;
+}
+
+.header-v2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 78px;
+}
+
+/* logo */
+.header-logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.header-logo img {
+    display: block;
+    height: clamp(104px, 3.2vw, 62px);
+    width: auto;
+    object-fit: contain;
+}
+
+/* CTA container (push to right) */
+.header-cta {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 auto;
+    /* allows CTA area to occupy remaining space */
+    min-width: 0;
+}
+
+/* stack aligned to the right */
+.call-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* keeps the button anchored to the right */
+    gap: 8px;
+}
+
+
+/* pill button */
+.btn-solid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    /* ✅ remove forced 50% */
+    max-width: min(720px, 60vw);
+    padding: 14px 26px;
+
+    border-radius: 999px;
+    text-decoration: none;
+
+    background: var(--cta-bg);
+    color: var(--cta-text);
+    border: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: 0 10px 22px rgba(6, 22, 50, .20);
+
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: .02em;
+    line-height: 1.1;
+
+    font-size: clamp(18px, 1.75vw, 26px);
+
+    transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    white-space: nowrap;
+    /* keeps pill clean on desktop */
+}
+
+.btn-solid:hover {
+    background: var(--cta-bg-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 26px rgba(6, 22, 50, .24);
+}
+
+/* sub text */
+.call-sub {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    align-self: center;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 992px) {
+    .header-inner {
+        width: min(var(--container), calc(100% - 28px));
+        padding: 10px 0;
+    }
+
+    .header-v2 {
+        min-height: 72px;
+    }
+
+    .btn-solid {
+        max-width: min(560px, 66vw);
+        padding: 12px 20px;
+        font-size: clamp(16px, 2.4vw, 20px);
+    }
+}
+
+/* =========================
+   MOBILE (stack, full width CTA)
+========================= */
+@media (max-width: 640px) {
+    .header-v2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 0 10px;
+    }
+
+    .header-logo img {
+        height: 54px;
+    }
+
+    .header-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .call-wrap {
+        width: 100%;
+        align-items: stretch;
+        /* full-width button */
+        gap: 8px;
+    }
+
+    .btn-solid {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 14px;
+        white-space: normal;
+        /* allow wrap on small screens */
+        text-align: center;
+        font-size: 18px;
+        padding: 12px 14px;
+    }
+
+    .call-sub {
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 390px) {
+    .btn-solid {
+        font-size: 16px;
+    }
+
+    .call-sub {
+        font-size: 13px;
+    }
+}

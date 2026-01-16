@@ -1,0 +1,89 @@
+/* =========================
+   CALL CTA BAR
+   (DO NOT AFFECT OTHER SECTIONS)
+========================= */
+
+.call-cta {
+    background: #14b84a;
+    /* green bar */
+    padding: 22px 0;
+}
+
+.call-cta__inner {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+}
+
+.call-cta__text {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 2.2vw, 38px);
+    line-height: 1.1;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Button */
+.call-cta__btn {
+    flex: 0 0 auto;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 28px;
+    border-radius: 999px;
+
+    background: #ffffff;
+    color: #111827;
+    text-decoration: none;
+
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.call-cta__btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+.call-cta__btn:active {
+    transform: translateY(0);
+}
+
+.call-cta__btn:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.55);
+    outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+    .call-cta {
+        padding: 18px 0;
+    }
+
+    .call-cta__inner {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .call-cta__text {
+        font-size: 22px;
+    }
+
+    .call-cta__btn {
+        width: min(360px, 100%);
+    }
+}

@@ -1,0 +1,122 @@
+.services {
+    position: relative;
+    background: #ffffff;
+    padding: 86px 0 110px;
+}
+
+.services-inner {
+    width: min(1600px, calc(100% - 64px));
+    margin: 0 auto;
+}
+
+.services-head {
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+.services-title {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4.4vw, 46px);
+    line-height: 1.05;
+    color: #262E45;
+    margin: 0;
+    letter-spacing: -0.1px;
+}
+
+.services-grid {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(18px, 2.0vw, 46px);
+    align-items: start;
+}
+
+.svc-item {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.svc-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+}
+
+.svc-icon img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    display: block;
+}
+
+.svc-title {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    max-width: 400px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #262E45;
+    margin: 0 0 11px;
+    line-height: 1;
+}
+
+.svc-desc {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #3e3e41;
+}
+
+
+/* Tablets */
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 34px 28px;
+    }
+
+    .svc-item {
+        max-width: 360px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .services {
+        padding: 64px 0 72px;
+    }
+
+    .services-inner {
+        width: min(1200px, calc(100% - 28px));
+    }
+
+    .services-head {
+        margin-bottom: 30px;
+    }
+
+    .svc-item {
+        max-width: 520px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .svc-title {
+        font-size: 17px;
+    }
+
+    .svc-desc {
+        font-size: 15.5px;
+        line-height: 1.7;
+    }
+}

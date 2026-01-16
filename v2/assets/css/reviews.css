@@ -1,0 +1,313 @@
+
+.reviews-split {
+    padding: 88px 0;
+    background: #f6f8fb;
+}
+
+.reviews-split__inner {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 56px;
+    align-items: center;
+}
+
+/* LEFT */
+.reviews-split__left {
+    display: block;
+}
+
+.reviews-split__title {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 900;
+    color: #262E45;
+    font-size: 50px;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+}
+
+/* RIGHT */
+.reviews-split__right {
+    min-width: 0;
+    /* prevents overflow issues inside grid */
+}
+
+/* Track: show 2-ish cards, allow scroll for 4 */
+.reviews-split__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(320px, 1fr);
+    gap: 22px;
+
+    overflow-x: auto;
+    padding: 6px 4px 12px;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 4px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Nice scrollbar (desktop) */
+.reviews-split__track::-webkit-scrollbar {
+    height: 10px;
+}
+
+.reviews-split__track::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .18);
+    border-radius: 999px;
+}
+
+.reviews-split__track::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .06);
+    border-radius: 999px;
+}
+
+/* Card */
+.review2-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 22px 22px 18px;
+
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .10);
+    border: 1px solid rgba(10, 12, 14, .06);
+
+    min-height: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    scroll-snap-align: start;
+}
+
+.review2-stars {
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #262E45;
+    /* green stars like reference */
+    margin-bottom: 12px;
+}
+
+/* Review text (clamped) */
+.review2-text {
+    margin: 0 0 12px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 500;
+    color: #1c1f23;
+    font-size: 14.5px;
+    line-height: 1.65;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+
+/* Read more button (works with your modal JS) */
+.review2-link {
+    margin-top: auto;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #262E45;
+    text-align: left;
+}
+
+.review2-link:hover {
+    text-decoration: underline;
+}
+
+.review2-meta {
+    margin-top: 14px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    color: #262E45;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+    .reviews-split__inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        align-items: start;
+    }
+
+    .reviews-split__title {
+        font-size: 44px;
+    }
+
+    .reviews-split__track {
+        grid-auto-columns: minmax(300px, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .reviews-split {
+        padding: 64px 0;
+    }
+
+    .reviews-split__inner {
+        width: min(1200px, calc(100% - 28px));
+    }
+
+    .reviews-split__title {
+        font-size: 38px;
+        line-height: 1.05;
+        text-align: center;
+    }
+
+    /* One card per swipe */
+    .reviews-split__track {
+        grid-auto-columns: 88%;
+        gap: 16px;
+        padding-bottom: 10px;
+    }
+
+    .review2-card {
+        padding: 18px 18px 16px;
+        border-radius: 16px;
+        min-height: 200px;
+    }
+
+    .review2-text {
+        -webkit-line-clamp: 5;
+    }
+}
+
+
+/* =========================
+   REVIEW MODAL
+========================= */
+
+.review-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(10, 12, 16, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.review-modal.is-open {
+    display: flex;
+}
+
+/* modal box */
+.review-modal__box {
+    position: relative;
+    width: min(640px, calc(100% - 32px));
+    max-height: 86vh;
+
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 28px 28px 26px;
+
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.10);
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    animation: modalFadeUp 220ms ease;
+}
+
+/* close button */
+.review-modal__close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    border: none;
+    background: #f2f4f7;
+    color: #111;
+
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+}
+
+.review-modal__close:hover {
+    background: #e6e9ee;
+}
+
+/* stars */
+.review-modal__stars {
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #262E45;
+}
+
+/* text */
+.review-modal__text {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #1c1f23;
+
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* author */
+.review-modal__name {
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: #262E45;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes modalFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+    .review-modal__box {
+        padding: 22px 20px 20px;
+        border-radius: 16px;
+    }
+
+    .review-modal__text {
+        font-size: 15px;
+    }
+}

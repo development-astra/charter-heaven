@@ -1,0 +1,390 @@
+.why-trust {
+  position: relative;
+  padding: 280px 0 110px;
+  background-color: #eef4fb;
+  background-image: url("../images/why-trust-bg.webp");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 2020px auto;
+  overflow: hidden;
+}
+
+.why-inner {
+  width: min(1300px, calc(100% - 48px));
+  margin: 0 auto;
+  text-align: center;
+}
+
+.why-logos {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 1.8vw, 26px);
+}
+
+.why-logos__label {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 18px;
+  color: rgba(10, 20, 35, 0.72);
+  white-space: nowrap;
+}
+
+.why-logos__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.2vw, 34px);
+  flex-wrap: nowrap;
+}
+
+.why-logos__row img {
+  height: clamp(56px, 5.2vw, 92px);
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+
+  filter: saturate(0.92) contrast(1.05);
+  opacity: 0.96;
+}
+
+.why-logos__row img {
+  max-width: 240px;
+}
+
+.why-title {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0 0 18px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  font-size: 54px;
+  color: #262E45;
+}
+
+/* Optional subtitle (still safe if you un-comment HTML) */
+.why-sub {
+  margin: 0 auto 46px;
+  max-width: 920px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba(10, 20, 35, 0.8);
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: stretch;
+  margin: 0 auto 44px;
+}
+
+.why-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 18px;
+  padding: 44px 28px 38px;
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.10);
+  overflow: hidden;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  transform: translateZ(0);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.14);
+}
+
+.why-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #d6b36a;
+  border-radius: 18px;
+  pointer-events: none;
+  opacity: .95;
+}
+
+.why-corner {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  color: #d6b36a;
+  opacity: .9;
+}
+
+.why-corner svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.why-big {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 68px;
+  line-height: 0.98;
+  color: #262E45;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.why-card:nth-child(3) .why-big {
+  white-space: normal;
+  line-height: 0.95;
+}
+
+.why-one {
+  font-size: 42px;
+}
+
+.why-mid {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: #262E45;
+  margin: 0;
+}
+
+
+.why-small {
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: rgba(12, 42, 79, 0.72);
+  margin: 0;
+}
+
+/* ✅ Since expiration is removed, divider is optional.
+   Keep it but make it tighter. */
+.why-card .why-divider {
+  height: 1px;
+  background: rgba(12, 42, 79, 0.10);
+  width: 88%;
+  margin: 18px auto 0;
+}
+
+/* If you ever re-enable the expiration footer */
+.why-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: rgba(12, 42, 79, 0.75);
+  padding: 0 2px;
+}
+
+.why-foot strong {
+  color: #0c2a4f;
+  font-weight: 800;
+}
+
+.why-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: linear-gradient(135deg, #B38E3D 0%, #FDFAB7 47%, #B38E3D 100%);
+  color: #262E45;
+  text-decoration: none;
+
+  height: 54px;
+  padding: 0 34px;
+  border-radius: 10px;
+
+  font-weight: 900;
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .35);
+  border: 1px solid rgba(255, 255, 255, .25);
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.why-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.why-btn:active {
+  transform: translateY(0px);
+  filter: brightness(.98);
+}
+
+/* CTA + Accepted Payments (crypto) */
+.cta-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.cta-payments{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-payments__label{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 3px;
+  font-size: 12px;
+  line-height: 1.05;
+  color: rgba(10, 20, 35, 0.75);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.cta-payments__logo{
+  height: 55px; 
+  width: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+
+/* Tablet */
+@media (max-width: 980px) {
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-card {
+    min-height: 270px;
+    padding: 38px 24px 30px;
+  }
+
+  .why-logos {
+    margin-bottom: 46px;
+    flex-wrap: wrap;
+  }
+
+  .why-logos__row {
+    flex-wrap: wrap;
+  }
+
+  .why-logos__row img {
+    height: 56px;
+    max-width: 220px;
+  }
+
+  .why-big {
+    font-size: 62px;
+  }
+
+  .why-mid {
+    font-size: 18px;
+  }
+
+  .why-small {
+    font-size: 16px;
+  }
+}
+
+@media (max-height: 820px) {
+  .why-trust {
+    padding: 100px 0 110px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .why-trust {
+    padding-top: 24px !important;
+    padding-bottom: 70px !important;
+    background-position: center bottom;
+    background-size: 820px auto;
+  }
+
+  .why-inner {
+    width: min(340px, calc(100% - 28px));
+  }
+
+  .why-logos__row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 14px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .why-logos__row img.logo{
+    display: block;
+    width: 100%;
+    max-width: 170px;  
+    object-fit: contain;
+    height: auto;
+  }
+
+  .why-logos__row img.logo--badge{
+    max-height: 94px;
+  }
+
+  .why-logos__row img.logo--word{
+    max-height: 80px;
+    max-width: 130px;
+  }
+
+  .why-logos__row img.logo--kick{
+    max-height: 48px;
+    max-width: 150px;
+  }
+
+  .why-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .why-sub {
+    font-size: 16px;
+    margin-bottom: 26px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .why-card {
+    min-height: 0;
+    padding: 32px 22px 26px;
+  }
+
+  .why-big {
+    font-size: 60px;
+    white-space: normal;
+  }
+
+  .why-mid {
+    font-size: 20px;
+  }
+
+  .why-small {
+    font-size: 16px;
+  }
+
+  .why-card .why-divider {
+    width: 92%;
+    margin-top: 16px;
+  }
+}
+

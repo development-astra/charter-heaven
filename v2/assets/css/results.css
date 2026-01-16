@@ -1,0 +1,190 @@
+/* =========================
+   RESULTS / PREVIOUS WORK
+========================= */
+
+.results {
+    background: #0a5be6;
+    padding: 74px 0 84px;
+}
+
+.results-inner {
+    width: min(1400px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.results-head {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.results-kicker {
+    margin: 0 0 10px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 8px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, .9);
+    text-transform: uppercase;
+}
+
+.results-title {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 50px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* =========================
+   GRID (DESKTOP: 3 TOP + 2 BOTTOM)
+========================= */
+.results-grid {
+    display: grid;
+    gap: 16px;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+        "r1 r1 r2 r2 r3 r3"
+        "r4 r4 r4 r5 r5 r5";
+}
+
+
+/* =========================
+   CARD (Hard-crop)
+========================= */
+.results-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, .08);
+    border: 2px solid rgba(255, 255, 255, .14);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .18);
+
+    transition: transform .18s ease, filter .18s ease;
+    transform: translateZ(0);
+}
+
+.results-item:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+}
+
+.results-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Areas */
+.r1 {
+    grid-area: r1;
+}
+
+.r2 {
+    grid-area: r2;
+}
+
+.r3 {
+    grid-area: r3;
+}
+
+.r4 {
+    grid-area: r4;
+}
+
+.r5 {
+    grid-area: r5;
+}
+
+/* ✅ DESKTOP HEIGHTS (match your 2nd image)
+   - Top row is shorter
+   - Bottom row both SAME height
+*/
+.r1,
+.r2,
+.r3 {
+    height: 250px;
+}
+
+.r4,
+.r5 {
+    height: 320px;
+}
+
+/* prevent any old min-height rules from affecting */
+.r1,
+.r2,
+.r3,
+.r4,
+.r5 {
+    min-height: 0 !important;
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+    .results-title {
+        font-size: 36px;
+    }
+
+    .r1,
+    .r2,
+    .r3 {
+        height: 190px;
+    }
+
+    .r4,
+    .r5 {
+        height: 320px;
+    }
+}
+
+/* =========================
+   MOBILE (stacked)
+========================= */
+@media (max-width: 640px) {
+    .results {
+        padding: 56px 0 64px;
+    }
+
+    .results-inner {
+        width: min(1200px, calc(100% - 28px));
+    }
+
+    .results-kicker {
+        letter-spacing: 6px;
+    }
+
+    .results-title {
+        font-size: 34px;
+        line-height: 1.05;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "r1"
+            "r2"
+            "r3"
+            "r4"
+            "r5";
+        gap: 14px;
+    }
+
+    .r1,
+    .r2,
+    .r3,
+    .r4,
+    .r5 {
+        height: 210px;
+    }
+}

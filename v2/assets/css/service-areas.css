@@ -1,0 +1,200 @@
+/* =========================
+   SERVICE AREAS (NEW DESIGN)
+   (DO NOT AFFECT OTHER SECTIONS)
+========================= */
+
+.service-areas {
+    position: relative;
+    padding: 96px 0 120px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* background image layer */
+.service-areas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/service-areas.webp");
+    /* <-- CHANGE PATH IF NEEDED */
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sa2-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.sa2-inner {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.sa2-title {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    font-size: clamp(30px, 3vw, 44px);
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #262E45;
+}
+
+.sa2-right {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* top row = 2 cards */
+.sa2-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+/* cards */
+.sa2-card {
+    border: 2px solid #262E45;
+    /* green border like reference */
+    border-radius: 16px;
+    background: #ffffff;
+
+    padding: 18px 20px;
+}
+
+
+.sa2-card--wide {
+    width: 100%;
+}
+
+.sa2-card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.sa2-pin {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 auto;
+    display: inline-block;
+}
+
+.sa2-pin svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.sa2-card-title {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #262E45;
+}
+
+/* lists */
+.sa2-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    gap: 10px 34px;
+
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+        sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #262E45;
+}
+
+.sa2-list--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sa2-list--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* make it feel airy like reference */
+.sa2-list li{
+  white-space: normal;      /* IMPORTANT: remove nowrap */
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .service-areas {
+        padding: 64px 0 80px;
+    }
+
+    .sa2-inner {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .sa2-row {
+        grid-template-columns: 1fr;
+    }
+
+    .sa2-card-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .sa2-list li {
+        white-space: normal;
+    }
+
+    .sa2-list--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+
+    .sa2-list--2,
+    .sa2-list--3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ✅ FIX: prevent overlap at high zoom (125–200%) */
+.sa2-list {
+  grid-auto-rows: minmax(0, auto);
+}
+
+.sa2-list li {
+  min-width: 0;            /* important for grid/flex shrink issues */
+  overflow-wrap: anywhere; /* allows words to wrap instead of overlap */
+  word-break: normal;
+  line-height: 1.35;
+}
+
+/* make each grid column truly flexible (prevents text crunching) */
+.sa2-list--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sa2-list--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}

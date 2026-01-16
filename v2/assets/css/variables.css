@@ -1,0 +1,29 @@
+:root {
+    --primary-blue: #0b5ed7;
+    --primary-green: #19b54a;
+    --dark-text: #0b1b2b;
+    --border-color: #1c7ed6;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent accidental overflow from sections using 100vw etc. */
+body {
+  overflow-x: clip; /* better than hidden */
+}

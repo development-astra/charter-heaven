@@ -1,0 +1,155 @@
+/* =========================
+   FINANCING CTA (BANNER)
+   (separate file)
+========================= */
+
+.financing-cta {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    background: #0a0f1a;
+}
+
+/* background image layer */
+.financing-cta__bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(90deg,
+            rgba(10, 16, 26, 0.68) 0%,
+            rgba(10, 16, 26, 0.48) 38%,
+            rgba(10, 16, 26, 0.10) 70%,
+            rgba(10, 16, 26, 0.00) 100%),
+        url("../images/financing-banner.webp");
+    background-size: cover;
+    background-position: center right;
+    transform: scale(1.02);
+}
+
+/* inner container */
+.financing-cta__inner {
+    position: relative;
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 90px 0;
+}
+
+/* content block */
+.financing-cta__content {
+    max-width: 640px;
+}
+
+.financing-cta__title {
+    margin: 0 0 18px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 1.03;
+    color: #ffffff;
+}
+
+.financing-cta__text {
+    margin: 0 0 28px;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.84);
+    max-width: 560px;
+}
+
+/* CTA button */
+.financing-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 16px 26px;
+    border-radius: 12px;
+
+    background: #ec8c35;
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-size: 16px;
+
+    transition: transform 160ms ease, filter 160ms ease;
+    box-shadow: 0 5px 15px rgb(236, 140, 53);
+}
+
+.financing-cta__btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.98);
+}
+
+.financing-cta__btn:active {
+    transform: translateY(0px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+    .financing-cta {
+        min-height: 460px;
+    }
+
+    .financing-cta__inner {
+        width: min(1200px, calc(100% - 32px));
+        padding: 72px 0;
+    }
+
+    .financing-cta__title {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 640px) {
+    .financing-cta {
+        min-height: 520px;
+    }
+
+    /* stronger overlay on mobile for readability */
+    .financing-cta__bg {
+        background-image:
+            linear-gradient(180deg,
+                rgba(10, 16, 26, 0.78) 0%,
+                rgba(10, 16, 26, 0.62) 45%,
+                rgba(10, 16, 26, 0.25) 100%),
+            url("../images/financing-banner.webp");
+        background-position: center;
+    }
+
+
+
+    .financing-cta__inner {
+        padding: 66px 0;
+    }
+
+    .financing-cta__content {
+        max-width: 100%;
+    }
+
+    .financing-cta__title {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .financing-cta__text {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .financing-cta__btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
