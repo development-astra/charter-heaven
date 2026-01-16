@@ -594,11 +594,11 @@
     display: none;
   }
 
-  .hero::after {
+  /* .hero::after {
     content: "";
     display: block;
     height: 260px;
     margin-top: 4px;
     background: url("../images/hero-family.webp") center / cover no-repeat;
-  }
+  } */
 }
