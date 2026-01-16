@@ -59,7 +59,7 @@
 
 .why-title {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  margin: 0 0 18px;
+  margin: 0 0 40px;
   font-weight: 900;
   letter-spacing: 0.5px;
   font-size: 54px;
@@ -78,10 +78,11 @@
 
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 460px));
   gap: 32px;
+  justify-content: center;
   align-items: stretch;
-  margin: 0 auto 44px;
+  margin: 0 auto 64px;
 }
 
 .why-card {
@@ -227,7 +228,7 @@
 }
 
 /* CTA + Accepted Payments (crypto) */
-.cta-row{
+.cta-row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,13 +236,13 @@
   flex-wrap: wrap;
 }
 
-.cta-payments{
+.cta-payments {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.cta-payments__label{
+.cta-payments__label {
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 900;
   letter-spacing: 3px;
@@ -252,8 +253,8 @@
   text-align: left;
 }
 
-.cta-payments__logo{
-  height: 55px; 
+.cta-payments__logo {
+  height: 55px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -318,7 +319,7 @@
     width: min(340px, calc(100% - 28px));
   }
 
-  .why-logos__row{
+  .why-logos__row {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -327,24 +328,24 @@
     justify-items: center;
   }
 
-  .why-logos__row img.logo{
+  .why-logos__row img.logo {
     display: block;
     width: 100%;
-    max-width: 170px;  
+    max-width: 170px;
     object-fit: contain;
     height: auto;
   }
 
-  .why-logos__row img.logo--badge{
+  .why-logos__row img.logo--badge {
     max-height: 94px;
   }
 
-  .why-logos__row img.logo--word{
+  .why-logos__row img.logo--word {
     max-height: 80px;
     max-width: 130px;
   }
 
-  .why-logos__row img.logo--kick{
+  .why-logos__row img.logo--kick {
     max-height: 48px;
     max-width: 150px;
   }
@@ -387,4 +388,3 @@
     margin-top: 16px;
   }
 }
-

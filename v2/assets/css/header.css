@@ -142,54 +142,80 @@
 /* =========================
    MOBILE (stack, full width CTA)
 ========================= */
+/* =========================
+   MOBILE (logo left, CTA right)
+========================= */
 @media (max-width: 640px) {
     .header-v2 {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        gap: 10px;
-        padding: 6px 0 10px;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 0;
+        min-height: 64px;
+    }
+
+    .header-logo {
+        flex: 0 0 auto;
     }
 
     .header-logo img {
-        height: 54px;
+        height: 48px;
+        width: auto;
     }
 
     .header-cta {
-        width: 100%;
-        justify-content: center;
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        min-width: 0;
     }
 
+    /* CTA block stays on the right */
     .call-wrap {
-        width: 100%;
-        align-items: stretch;
-        /* full-width button */
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* button sits right */
+        gap: 6px;
+        width: fit-content;
+        /* makes text center under the button width */
     }
 
     .btn-solid {
-        width: 100%;
+        width: clamp(190px, 52vw, 300px);
+        /* responsive, not full-width */
         max-width: 100%;
+        padding: 12px 14px;
         border-radius: 14px;
         white-space: normal;
-        /* allow wrap on small screens */
         text-align: center;
-        font-size: 18px;
-        padding: 12px 14px;
+        font-size: 16px;
+        line-height: 1.15;
     }
 
+    /* Centered under the button */
     .call-sub {
+        width: 100%;
         text-align: center;
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.2;
     }
 }
 
 /* Extra small phones */
 @media (max-width: 390px) {
+    .header-logo img {
+        height: 44px;
+    }
+
     .btn-solid {
-        font-size: 16px;
+        width: clamp(170px, 58vw, 260px);
+        font-size: 15px;
     }
 
     .call-sub {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
